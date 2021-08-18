@@ -52,11 +52,11 @@ export default function Index () {
 
   function validForm () {
     if (userName.trim().length < 3) {
-      setCreateFormError('Name must be longer than 3 characters')
+      setCreateFormError('O nome deve ter mais de 3 caracteres')
       return false
     }
     if (roomName.trim().length < 3) {
-      setCreateFormError('Room Title must be longer than 3 characters')
+      setCreateFormError('O título da sala deve ter mais de 3 caracteres')
       return false
     }
     setCreateFormError(false)
@@ -89,26 +89,26 @@ export default function Index () {
           <h1 style={{transform: 'rotate(25deg)', textAlign: 'center', fontSize: 60}}>📢</h1>
           <Heading size={2}>Host Room</Heading>
           <div>
-            <Input placeholder="Your Name" onChange={e => setUserName(e.target.value)} />
+            <Input placeholder="Seu nome" onChange={e => setUserName(e.target.value)} />
           </div>
           <div>
-            <Input placeholder="Room Title" onChange={e => setRoomName(e.target.value)} />
+            <Input placeholder="Título da Sala" onChange={e => setRoomName(e.target.value)} />
           </div>
         </div>
         { createFormError && (
           <div className="error">{createFormError}</div>
         )}
         <div style={{marginTop: 20}}>
-          <Button success={micAccess === 'granted'} disabled={micAccess === 'granted'} fullWidth onClick={requestMicAccess}>Allow Microphone Access</Button>
+          <Button success={micAccess === 'granted'} disabled={micAccess === 'granted'} fullWidth onClick={requestMicAccess}>Permitir acesso ao microfone</Button>
         </div>
         <div style={{marginTop: 20}}>
-          <Button outline={micAccess !== 'granted'} disabled={micAccess !== 'granted'} big fullWidth onClick={createRoom}>Create Room</Button>
+          <Button outline={micAccess !== 'granted'} disabled={micAccess !== 'granted'} big fullWidth onClick={createRoom}>Criar Podcast</Button>
         </div>
         { config.firebase.enabled && (
           <div className="spacing" style={{marginTop: 30}}>
-            <Heading size={2}>Latest Rooms</Heading>
+            <Heading size={2}>Últimas salas</Heading>
             {exploreRooms.length === 0 && (
-              <div>No rooms available</div>
+              <div>Sem salas disponíveis</div>
             )}
             <RoomList rooms={exploreRooms} />
           </div>
