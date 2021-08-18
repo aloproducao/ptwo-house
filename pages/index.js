@@ -87,7 +87,7 @@ export default function Index () {
       <div style={{padding: 20}}>
         <div className="spacing">
           <h1 style={{transform: 'rotate(25deg)', textAlign: 'center', fontSize: 60}}>📢</h1>
-          <Heading size={2}>Host Room</Heading>
+          <Heading size={2}>navve.cast</Heading>
           <div>
             <Input placeholder="Seu nome" onChange={e => setUserName(e.target.value)} />
           </div>
